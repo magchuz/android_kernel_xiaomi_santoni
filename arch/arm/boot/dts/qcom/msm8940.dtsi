@@ -574,7 +574,9 @@
 	/delete-node/qcom,gpu-pwrlevel-bins;
 	/delete-node/qcom,gpu-pwrlevels;
 
-	qcom,gpu-pwrlevel-bins {
+
+
+		qcom,gpu-pwrlevel-bins {
 		#address-cells = <1>;
 		#size-cells = <0>;
 
