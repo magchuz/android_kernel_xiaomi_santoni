@@ -326,12 +326,12 @@ module_param_named(
 	first_est_dump, fg_est_dump, int, S_IRUSR | S_IWUSR
 );
 
-static char *fg_batt_type;
+char *fg_batt_type = "qrd_msm8937_Coslight_4100mah";
 module_param_named(
 	battery_type, fg_batt_type, charp, S_IRUSR | S_IWUSR
 );
 
-static int fg_sram_update_period_ms = 30000;
+static int fg_sram_update_period_ms = 15000;
 module_param_named(
 	sram_update_period_ms, fg_sram_update_period_ms, int, S_IRUSR | S_IWUSR
 );
