@@ -1775,7 +1775,7 @@ static int chg_uv(struct smb358_charger *chip, u8 status)
 			* USB insertion.
 			*/
 			rc = smb358_charging_disable(chip, SOC, false);
-			if (rc < 0)
+		if (rc < 0)
 				dev_err(chip->dev,
 					"Couldn't disable usb suspend rc = %d\n",
 									rc);
