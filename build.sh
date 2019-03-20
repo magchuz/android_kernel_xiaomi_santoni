@@ -21,7 +21,7 @@ mkdir output
 START=$(date +"%s");
 make O=output ARCH=arm64 santoni_treble_defconfig
 
-PATH="`/home/runner/android_kernel_xiaomi_santoni/clang/bin:`/home/runner/android_kernel_xiaomi_santoni/gcc/bin:${PATH}" \
+PATH="/home/runner/android_kernel_xiaomi_santoni/clang/bin:/home/runner/android_kernel_xiaomi_santoni/gcc/bin:${PATH}" \
 make -j$(nproc --all) O=output \
                       ARCH=arm64 \
                       CC=clang \
