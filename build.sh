@@ -19,7 +19,7 @@ Build using : <code>SemaphoreCI</code>" https://api.telegram.org/bot757761074:AA
 rm -rf output
 mkdir output
 START=$(date +"%s");
-make -C $(pwd) O=output santoni_defconfig
+make -C $(pwd) O=output santoni_treble_defconfig
 
 make -j32 -C $(pwd) O=output 2>&1| tee ${tanggal}-Log.txt
 
