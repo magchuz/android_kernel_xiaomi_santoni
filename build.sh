@@ -1,9 +1,9 @@
 #!/bin/bash
 
-git clone https://github.com/najahiiii/aarch64-linux-gnu.git -b gcc4.9.4-20190301 gcc
+git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 gcc
+git clone https://github.com/VRanger/aosp-clang clang
 make clean distclean
 export ARCH=arm64
-export CROSS_COMPILE=/home/runner/android_kernel_xiaomi_santoni/gcc/bin/aarch64-linux-gnu-
 export KBUILD_BUILD_USER=Everest
 export KBUILD_BUILD_HOST=HimalayaTeam
 export USE_CCACHE=1
@@ -11,7 +11,7 @@ export CACHE_DIR=~/.ccache
 tanggal=$(date +'%m%d-%H%M')
 
 curl -F chat_id="-1001415832052" -F parse_mode="HTML" -F text="Building <b>Everest Kernel</b>
-Compiler : <code>GNU GCC 4.9</code>
+Compiler : <code>AOSP Clang</code>
 Last Commit : <code>$(git log --oneline --decorate --color --pretty=%s --first-parent -1)</code>
 Build Started on : <code>$(date)</code>
 Build using : <code>SemaphoreCI</code>" https://api.telegram.org/bot757761074:AAFKxcBRT-hsNfyC0wXTH_GXJozT7yzflKU/sendMessage
@@ -19,10 +19,14 @@ Build using : <code>SemaphoreCI</code>" https://api.telegram.org/bot757761074:AA
 rm -rf output
 mkdir output
 START=$(date +"%s");
-make -C $(pwd) O=output santoni_treble_defconfig
+make O=output ARCH=arm64 santoni_treble_defconfig
 
-make -j32 -C $(pwd) O=output 2>&1| tee ${tanggal}-Log.txt
-
+PATH="/home/runner/android_kernel_xiaomi_santoni/clang/bin:/home/runner/android_kernel_xiaomi_santoni/gcc/bin:${PATH}" \
+make -j$(nproc --all) O=output \
+                      ARCH=arm64 \
+                      CC=clang \
+                      CLANG_TRIPLE=aarch64-linux-gnu- \
+                      CROSS_COMPILE=aarch64-linux-android-
 
 if [ ! -f output/arch/arm64/boot/Image.gz-dtb ]; then
 
