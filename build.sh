@@ -46,7 +46,7 @@ if [ ! -f output/arch/arm64/boot/Image.gz-dtb ]; then
 
 else 
 
-cp output/arch/arm64/boot/Image.gz-dtb AnyKernel/zImage
+cp output/arch/arm64/boot/Image.gz-dtb AnyKernel2/zImage
 
 
 cd AnyKernel2
