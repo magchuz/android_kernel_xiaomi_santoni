@@ -1,0 +1,18 @@
+version: v1.0
+name: KernelProduction
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: "Build"
+    task:
+      env_vars:
+        - name: APP_ENV
+          value: prod
+      jobs:
+      - name: Compile Kernol
+        commands:
+          - checkout
+          - install-package gcc bc make python zip curl
+          - source build.sh 
