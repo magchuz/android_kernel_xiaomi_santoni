@@ -21,7 +21,7 @@ mkdir output
 START=$(date +"%s");
 make -C $(pwd) O=output santoni_treble_defconfig
 
-make -j32 -C $(pwd) O=output 2>&1| tee ${tanggal}-Log.txt
+make -j64 -C $(pwd) O=output 2>&1| tee ${tanggal}-Log.txt
 
 
 if [ ! -f output/arch/arm64/boot/Image.gz-dtb ]; then
