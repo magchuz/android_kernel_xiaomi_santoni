@@ -3,7 +3,7 @@
 git clone https://github.com/najahiiii/aarch64-linux-gnu.git -b gcc4.9.4-20190301 gcc
 make clean distclean
 export ARCH=arm64
-export CROSS_COMPILE=/home/runner/android_kernel_xiaomi_santoni/gcc/bin/aarch64-linux-gnu-
+export CROSS_COMPILE=/home/semaphore/android_kernel_xiaomi_santoni-eins/gcc/bin/aarch64-linux-gnu-
 export KBUILD_BUILD_USER=Everest
 export KBUILD_BUILD_HOST=HimalayaTeam
 export USE_CCACHE=1
