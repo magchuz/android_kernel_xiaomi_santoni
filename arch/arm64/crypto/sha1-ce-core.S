@@ -151,4 +151,3 @@ CPU_LE(	rev32		v11.16b, v11.16b	)
 	str		dgb, [x2, #16]
 	ret
 ENDPROC(sha1_ce_transform)
-

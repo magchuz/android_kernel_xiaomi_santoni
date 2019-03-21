@@ -154,4 +154,3 @@ CPU_LE(	rev32		v19.16b, v19.16b	)
 3:	stp		dga, dgb, [x2]
 	ret
 ENDPROC(sha2_ce_transform)
-
