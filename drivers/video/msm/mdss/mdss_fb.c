@@ -48,7 +48,6 @@
 #include <linux/file.h>
 #include <linux/kthread.h>
 #include <linux/dma-buf.h>
-=======
 #include <linux/mdss_io_util.h>
 #include <linux/wakelock.h>
 
