@@ -3,7 +3,7 @@
 git clone git://github.com/krasCGQ/aarch64-linux-android -b opt-gnu-8.x --depth=1 gcc 
 make clean distclean
 export ARCH=arm64
-export CROSS_COMPILE=/home/runner/android_kernel_xiaomi_santoni/gcc/bin/aarch64-linux-gnu-
+export CROSS_COMPILE=/home/runner/android_kernel_xiaomi_santoni/gcc/bin/aarch64-opt-linux-android-
 export KBUILD_BUILD_USER=Everest
 export KBUILD_BUILD_HOST=HimalayaTeam
 export USE_CCACHE=1
