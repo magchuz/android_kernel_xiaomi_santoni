@@ -260,12 +260,12 @@ int aw2013_set_color_singlecolor(struct aw2013_dev_data *aw2013)
 			aw2013_i2c_write(0x38, Fall_t << 4 | Off_time);
 			aw2013_i2c_write(0x39, Delay_time << 4 | Period_Num);
 
-			aw2013_i2c_write(0x3a, 
-Rise_t << 4 | Hold_time);
-			aw2013_i2c_write(0x3b, 
-Fall_t << 4 | Off_time); aw2013_i2c_write(0x3d, 
-Rise_t << 4 | Hold_time);
-			aw2013_i2c_write(0x3c, Delay_time << 4 | Period_Num);			aw2013_i2c_write(0x3e, Fall_t << 4 | Off_time);
+			aw2013_i2c_write(0x3a, Rise_t << 4 | Hold_time);
+			aw2013_i2c_write(0x3b, Fall_t << 4 | Off_time);
+			aw2013_i2c_write(0x3c, Delay_time << 4 | Period_Num);
+
+			aw2013_i2c_write(0x3d, Rise_t << 4 | Hold_time);
+			aw2013_i2c_write(0x3e, Fall_t << 4 | Off_time);
 			aw2013_i2c_write(0x3f, Delay_time << 4 | Period_Num);
 		}
 		aw2013_i2c_write(0x30, blue_on << 2 | green_on << 1 | red_on);
